@@ -1,0 +1,51 @@
+2026-01-25T13:21:49.618+05:30  INFO 23680 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Starting OrderProcessingApplication using Java 17.0.11 with PID 23680 (D:\JBK Files\java setup files\STSProjects\OrderProcessing\target\classes started by Lenovo in D:\JBK Files\java setup files\STSProjects\OrderProcessing)
+2026-01-25T13:21:49.626+05:30  INFO 23680 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-25T13:21:51.319+05:30  INFO 23680 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-25T13:21:51.345+05:30  INFO 23680 --- [OrderProcessing] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-25T13:21:51.345+05:30  INFO 23680 --- [OrderProcessing] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-25T13:21:51.450+05:30  INFO 23680 --- [OrderProcessing] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1707 ms
+2026-01-25T13:21:52.089+05:30  INFO 23680 --- [OrderProcessing] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-01-25T13:21:53.201+05:30  INFO 23680 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-25T13:21:53.212+05:30  INFO 23680 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Started OrderProcessingApplication in 4.329 seconds (process running for 5.874)
+2026-01-25T13:22:08.928+05:30  INFO 23680 --- [OrderProcessing] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-01-25T13:22:08.934+05:30  INFO 23680 --- [OrderProcessing] [RMI TCP Connection(2)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-25T13:22:09.171+05:30  INFO 23680 --- [OrderProcessing] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-25T13:22:22.628+05:30  INFO 23616 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Starting OrderProcessingApplication using Java 17.0.11 with PID 23616 (D:\JBK Files\java setup files\STSProjects\OrderProcessing\target\classes started by Lenovo in D:\JBK Files\java setup files\STSProjects\OrderProcessing)
+2026-01-25T13:22:22.635+05:30  INFO 23616 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-25T13:22:23.855+05:30  INFO 23616 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-25T13:22:23.877+05:30  INFO 23616 --- [OrderProcessing] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-25T13:22:23.877+05:30  INFO 23616 --- [OrderProcessing] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-25T13:22:23.980+05:30  INFO 23616 --- [OrderProcessing] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1271 ms
+2026-01-25T13:22:24.589+05:30  INFO 23616 --- [OrderProcessing] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-01-25T13:22:25.446+05:30  INFO 23616 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-25T13:22:25.455+05:30  INFO 23616 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Started OrderProcessingApplication in 3.366 seconds (process running for 4.321)
+2026-01-25T13:35:25.143+05:30  INFO 23616 --- [OrderProcessing] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-25T13:35:25.181+05:30  INFO 23616 --- [OrderProcessing] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-25T13:35:25.357+05:30  INFO 23616 --- [OrderProcessing] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 175 ms
+2026-01-25T13:38:47.306+05:30  INFO 23616 --- [OrderProcessing] [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-01-25T13:38:47.381+05:30  INFO 23616 --- [OrderProcessing] [RMI TCP Connection(18)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-25T13:38:47.558+05:30  INFO 23616 --- [OrderProcessing] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-25T13:38:58.871+05:30  INFO 6856 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Starting OrderProcessingApplication using Java 17.0.11 with PID 6856 (D:\JBK Files\java setup files\STSProjects\OrderProcessing\target\classes started by Lenovo in D:\JBK Files\java setup files\STSProjects\OrderProcessing)
+2026-01-25T13:38:58.876+05:30  INFO 6856 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-25T13:39:00.188+05:30  INFO 6856 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-01-25T13:39:00.204+05:30  INFO 6856 --- [OrderProcessing] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-25T13:39:00.205+05:30  INFO 6856 --- [OrderProcessing] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-25T13:39:00.285+05:30  INFO 6856 --- [OrderProcessing] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1347 ms
+2026-01-25T13:39:00.846+05:30  INFO 6856 --- [OrderProcessing] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2026-01-25T13:39:01.707+05:30  INFO 6856 --- [OrderProcessing] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-01-25T13:39:01.712+05:30  INFO 6856 --- [OrderProcessing] [main] c.o.OrderProcessingApplication           : Started OrderProcessingApplication in 3.342 seconds (process running for 4.473)
+2026-01-25T13:39:14.201+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-25T13:39:14.203+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-25T13:39:14.206+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-01-25T13:39:14.641+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-2] com.orderprocessing.AuthController       : Login successful for user: admin
+2026-01-25T13:43:42.668+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] com.orderprocessing.OrderController      : Creating order for customer: 111111
+2026-01-25T13:43:42.672+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] c.orderprocessing.service.OrderService   : Creating order for customer: 111111 by user: admin
+2026-01-25T13:43:42.678+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] c.orderprocessing.service.OrderService   : Order created successfully. OrderId: 2c3627b4-d3af-477b-9382-7f48f8777601
+2026-01-25T13:43:42.713+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] c.orderprocessing.service.FileService    : Order written to file: input/orders\order-2c3627b4-d3af-477b-9382-7f48f8777601.json
+2026-01-25T13:43:42.713+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] c.orderprocessing.service.OrderService   : Order JSON file created: order-2c3627b4-d3af-477b-9382-7f48f8777601.json
+2026-01-25T13:43:42.714+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-3] com.orderprocessing.OrderController      : Order created successfully: 2c3627b4-d3af-477b-9382-7f48f8777601
+2026-01-25T13:43:59.603+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-5] com.orderprocessing.OrderController      : Fetching order by ID: 2c3627b4-d3af-477b-9382-7f48f8777601
+2026-01-25T13:43:59.603+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-5] c.orderprocessing.service.OrderService   : Fetching order by ID: 2c3627b4-d3af-477b-9382-7f48f8777601
+2026-01-25T14:12:07.351+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-4] com.orderprocessing.OrderController      : Fetching order by ID: 12345
+2026-01-25T14:12:07.369+05:30  INFO 6856 --- [OrderProcessing] [http-nio-8080-exec-4] c.orderprocessing.service.OrderService   : Fetching order by ID: 12345
+2026-01-25T14:12:07.382+05:30  WARN 6856 --- [OrderProcessing] [http-nio-8080-exec-4] c.orderprocessing.service.OrderService   : Order not found: 12345
