@@ -1,86 +1,70 @@
 package com.orderprocessing.config;
 
-
-
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import com.orderprocessing.entity.Order;
 
-@Configuration
+@Component
 public class CamelConfig extends RouteBuilder {
-    
+
     @Override
     public void configure() throws Exception {
+
+        System.out.println("🔄 Camel Route Initializing...");
         
-        // ========== Route 1: File to ActiveMQ ==========
-        from("file:input/orders?noop=true&delete=true&delay=5000")
-            .routeId("file-to-activemq-route")
-            .log("Processing file: ${header.CamelFileName}")
-            
-            .doTry()
-                .unmarshal().json(JsonLibrary.Jackson, Order.class)
-                
-                .process(exchange -> {
-                    Order order = exchange.getIn().getBody(Order.class);
-                    System.out.println("Processing file: " + exchange.getIn().getHeader("CamelFileName") + 
-                                     " | OrderId: " + order.getOrderId());
-                    
-                    // Validate
-                    validateOrder(order);
-                })
-                
-                .marshal().json()
-                .to("activemq:queue:ORDER.CREATED.QUEUE")
-                .log("Successfully sent Order to ActiveMQ")
-                
-            .doCatch(Exception.class)
-                .log("Error processing file ${header.CamelFileName}: ${exception.message}")
-                .to("file:error/orders?fileName=${header.CamelFileName}")
-            .end();
-        
-        // ========== Route 2: ActiveMQ Consumer ==========
+        // File → ActiveMQ Route - Changed delete=false and added move
+        from("file:input/orders?noop=false&delay=1000&delete=false&move=./processed")
+            .routeId("file-to-activemq")
+            .log("🚀 File received: ${header.CamelFileName}")
+            .log("📄 File content: ${body}")
+            .log("📁 File size: ${header.CamelFileLength} bytes")
+            .unmarshal().json(JsonLibrary.Jackson, Order.class)
+            .process(exchange -> {
+                Order order = exchange.getIn().getBody(Order.class);
+                System.out.println("✅ Parsed Order: " + order.getOrderId() + 
+                                  " | Customer: " + order.getCustomerId() +
+                                  " | Created At: " + order.getCreatedAt());
+                validateOrder(order);
+            })
+            .marshal().json()
+            .log("📤 Sending to ActiveMQ queue: ORDER.CREATED.QUEUE")
+            .log("📤 Message body: ${body}")
+            .to("activemq:queue:ORDER.CREATED.QUEUE")
+            .log("✅ Message successfully sent to ActiveMQ")
+            .onException(Exception.class)
+                .log("❌ Error in file-to-activemq route: ${exception.message}")
+                .handled(true);
+
+        // ActiveMQ Consumer Route
         from("activemq:queue:ORDER.CREATED.QUEUE")
-            .routeId("activemq-consumer-route")
-            .log("Received message from ORDER.CREATED.QUEUE")
-            
-            .doTry()
-                .unmarshal().json(JsonLibrary.Jackson, Order.class)
-                
-                .process(exchange -> {
-                    Order order = exchange.getIn().getBody(Order.class);
-                    
-                    // Log as specified in requirements
-                    System.out.println("Order processed | OrderId=" + order.getOrderId() + 
-                                     " | CustomerId=" + order.getCustomerId() + 
-                                     " | Amount=" + order.getAmount());
-                    
-                    System.out.println("Successfully processed order: " + order.getOrderId());
-                })
-                
-            .doCatch(Exception.class)
-                .log("Error processing message from ActiveMQ: ${exception.message}")
-            .end();
+            .routeId("activemq-consumer")
+            .log("📥 Received message from ActiveMQ: ${body}")
+            .unmarshal().json(JsonLibrary.Jackson, Order.class)
+            .process(exchange -> {
+                Order order = exchange.getIn().getBody(Order.class);
+                System.out.println("🎯 ACTIVE MQ RECEIVED:");
+                System.out.println("🎯 Order ID: " + order.getOrderId());
+                System.out.println("🎯 Customer: " + order.getCustomerId());
+                System.out.println("🎯 Product: " + order.getProduct());
+                System.out.println("🎯 Amount: " + order.getAmount());
+                System.out.println("🎯 Created At: " + order.getCreatedAt());
+            })
+            .log("✅ Order processing completed");
+
+        System.out.println("✅ Camel Routes configured successfully");
     }
-    
+
     private void validateOrder(Order order) {
         if (order == null) {
             throw new IllegalArgumentException("Order is null");
         }
-        
-        if (order.getOrderId() == null || order.getOrderId().trim().isEmpty()) {
-            throw new IllegalArgumentException("Order ID is null or empty");
+        if (order.getAmount() <= 0) {
+            throw new IllegalArgumentException("Invalid Order Amount: " + order.getAmount());
         }
-        
         if (order.getCustomerId() == null || order.getCustomerId().trim().isEmpty()) {
-            throw new IllegalArgumentException("Customer ID is null or empty");
+            throw new IllegalArgumentException("Customer ID is required");
         }
-        
-        if (order.getAmount() == null || order.getAmount() <= 0) {
-            throw new IllegalArgumentException("Amount must be greater than 0");
-        }
-        
-        System.out.println("Validation passed for Order: " + order.getOrderId());
     }
 }

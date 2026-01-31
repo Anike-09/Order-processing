@@ -23,15 +23,16 @@ public class Order {
     private Double amount;
     
     @JsonProperty("createdAt")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createdAt;
+ //   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private String createdAt;
     
     @JsonProperty("status")
     private String status;
     
     public Order() {
         this.orderId = UUID.randomUUID().toString();
-        this.createdAt = LocalDateTime.now();
+      //  this.createdAt = LocalDateTime.now();
+        this.createdAt = java.time.LocalDateTime.now().toString();
         this.status = "CREATED";
     }
     
@@ -75,11 +76,11 @@ public class Order {
         this.amount = amount; 
     }
     
-    public LocalDateTime getCreatedAt() { 
+    public String getCreatedAt() { 
         return createdAt; 
     }
     
-    public void setCreatedAt(LocalDateTime createdAt) { 
+    public void setCreatedAt(String createdAt) { 
         this.createdAt = createdAt; 
     }
     

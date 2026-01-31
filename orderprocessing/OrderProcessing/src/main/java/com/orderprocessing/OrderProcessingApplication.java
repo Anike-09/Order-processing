@@ -8,7 +8,7 @@ public class OrderProcessingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrderProcessingApplication.class, args);
-		System.out.println("appache camel");
+		System.out.println("Run....");
 	}
 
 }
