@@ -30,14 +30,14 @@ public class FileService {
      
     public void writeOrderToFile(Order order) {
         try {
-            // Create directory if it doesn't exist
+           
             File dir = new File(outputDirectory);
             if (!dir.exists()) {
                 boolean created = dir.mkdirs();
                 logger.info("Directory created: {} - Success: {}", dir.getAbsolutePath(), created);
             }
             
-            // Also create processed directory for Camel
+           
             File processedDir = new File("processed");
             if (!processedDir.exists()) {
                 processedDir.mkdirs();
