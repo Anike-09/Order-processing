@@ -46,7 +46,7 @@ public class OrderService {
 	}
 
 	public Order getOrderById(String orderId) {
-		logger.info("Fetching order by ID: {}", orderId);
+		logger.info("Fetching order by ID:", orderId);
 		Order order = orderRepository.findById(orderId);
 
 		if (order == null) {
@@ -58,12 +58,14 @@ public class OrderService {
 	}
 
 	public List<Order> getOrdersByCustomerId(String customerId) {
-		logger.info("Fetching orders for customer: {}", customerId);
+		logger.info("Fetching orders for customer", customerId);
 		return orderRepository.findByCustomerId(customerId);
 	}
 
 	public List<Order> getAllOrders() {
 		logger.info("Fetching all orders");
 		return orderRepository.findAll();
+		
 	}
+	// just checking
 }
