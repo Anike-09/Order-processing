@@ -9,7 +9,7 @@ public class OrderProcessingApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OrderProcessingApplication.class, args);
 		System.out.println("Run....");
-		System.out.println("Changes added ");
+		System.out.println("Changes added for main");
 	}
 
 }
