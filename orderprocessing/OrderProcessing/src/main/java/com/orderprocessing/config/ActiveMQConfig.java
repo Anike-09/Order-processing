@@ -10,6 +10,8 @@ import org.springframework.jms.annotation.EnableJms;
 @Configuration
 @EnableJms
 public class ActiveMQConfig {
+	
+	
 
     @Value("${spring.activemq.broker-url}")
     private String brokerUrl;
@@ -26,7 +28,13 @@ public class ActiveMQConfig {
         factory.setBrokerURL(brokerUrl);
         factory.setUserName(username);
         factory.setPassword(password);
+        
+        
+        System.out.println("BugFix/1");
+        
         return factory;
+        
+        
     }
 
     @Bean(name = "activemq")
