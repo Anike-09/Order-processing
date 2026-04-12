@@ -10,6 +10,7 @@ public class OrderProcessingApplication {
 		SpringApplication.run(OrderProcessingApplication.class, args);
 		System.out.println("Run....");
 		System.out.println("Resolved OSM 1 Issue ");
+		System.out.println("Resolved OSM 2 Issue ");
 	}
 
 }
