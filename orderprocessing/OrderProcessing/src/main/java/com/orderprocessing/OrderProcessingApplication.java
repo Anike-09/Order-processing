@@ -8,8 +8,8 @@ public class OrderProcessingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrderProcessingApplication.class, args);
-		System.out.println("Run....");
-		System.out.println("Final resolved ");
+		System.out.println("This is Main class");
+
 	
 	}
 
